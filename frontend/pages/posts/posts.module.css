@@ -1,0 +1,95 @@
+.container {
+    background: rgb(232, 224, 224);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 20vh;    
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Playfair Display', serif;
+    background:url(/images/temple2.jpg) no-repeat center center fixed;
+}
+
+.header h1 {
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 5px;
+}
+
+.section {
+    background: rgb(226, 220, 210);
+    min-height: 80vh;
+    overflow:hidden;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "topheader topheader"
+                          "sidebar rightside";
+                          
+    padding: 10px 10px 10px 10px;
+}
+
+.section h3 {
+    grid-area: topheader;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.nav {
+    color: black;
+    font-size:12px;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: space-around;
+    padding-right: 10px;
+    font-weight: 600;    
+}
+
+.nav h4 {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
+.posts {
+    grid-area: sidebar;
+    padding: 10px 10px 10px 10px;
+    background: rgb(87, 87, 90);
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+     border: solid black 0.01px;
+    border-radius: 3%;
+    box-shadow: 5px 5px #888888;
+    overflow:auto;
+    max-height: 270vh;
+    scroll-behavior: smooth;
+}
+
+.formpost {
+    grid-area: rightside;
+    background:rgb(217, 243, 226);
+    padding: 10px 10px 10px 10px;
+    margin: 5px;
+    border: solid black 0.01px;
+    border-radius: 3%;
+    box-shadow: 5px 5px #888888;
+    max-height: 70vh;
+   }
+   .footer {
+       display: flex;
+       justify-content: center;
+       align-items: center
+   }
+
+
+

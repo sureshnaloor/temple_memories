@@ -1,0 +1,68 @@
+
+.label1 {
+    grid-area: label;
+    color: #fa677b;
+    font-weight: bold;
+    
+}
+
+.label2 {
+    grid-area: label;
+    color: #fa677b;
+    font-weight: bold;
+}
+
+.label3 {
+    grid-area: label;
+    color: #fa677b;
+    font-weight: bold;
+}
+
+.label4 {
+    grid-area: label;
+    color: #fa677b;
+    font-weight: bold;
+}
+
+.input1 {
+    grid-area: input;
+    }
+
+.input2 {
+    grid-area: input;   
+    
+}
+
+.input3 {
+    grid-area: input;
+   }
+
+.input4 {
+    grid-area: input;    
+}
+.submitBtn {
+   margin-left: 40%;
+   margin-right: 40%;
+   padding-top:5px;
+   padding-bottom: 5px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size:16px;
+}
+
+.formControl {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "label input"
+                        "label input"
+                        "label input"
+                        "label input";
+    margin-bottom: 20px;
+}
+
+.error {
+    color:red;
+}
+
