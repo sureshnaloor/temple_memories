@@ -9,10 +9,18 @@ import postServices from '../../services/posts';
 import Formpost from '../../components/Formpost';
 import Post from '../../components/Post';
 
+// redux testing below commented whatever in this file
+// import { useDispatch, useSelector } from 'react-redux';
+// import { fetchPosts } from '../../redux-store/actions/postAction';
+
 const index = () => {
 	const [posts, setPosts] = useState([]);
 
 	const [session, loading] = useSession();
+
+	// const dispatch = useDispatch();
+	// const { posts1 } = useSelector((state) => state.post);
+
 	const [formValue, setFormValue] = useState({
 		title: '',
 		message: '',
@@ -26,6 +34,10 @@ const index = () => {
 	useEffect(() => {
 		retrievePosts();
 	}, [formValue]);
+
+	// useEffect(() => {
+	// 	dispatch(fetchPosts());
+	// }, []);
 
 	const retrievePosts = async () => {
 		const response = await postServices.getAll();
@@ -70,6 +82,7 @@ const index = () => {
 						Welcome to Temple Memories where you can post your amazing visits
 						for memories eternal!
 					</h3>
+					{/* {posts1 && posts1.map((item) => <p key={item}> {item} </p>)} */}
 					<div className={styles.posts}>
 						{!posts
 							? 'No posts to display'

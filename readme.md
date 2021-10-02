@@ -4,6 +4,7 @@
 ### local mongodb
 
 *things to do as of 14 Aug 21*
+0. Redux setup
 1. Reviews (1 star to 5 star) - similar to 'like' 
 2. Comments
 3. Hashtags
