@@ -4,22 +4,22 @@ import Image from 'next/image';
 
 import { signIn, signOut, useSession } from 'next-auth/client';
 
-import postServices from '../../services/posts';
+// import postServices from '../../services/posts';
 
 import Formpost from '../../components/Formpost';
 import Post from '../../components/Post';
 
 // redux testing below commented whatever in this file
-// import { useDispatch, useSelector } from 'react-redux';
-// import { fetchPosts } from '../../redux-store/actions/postAction';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchPosts } from '../../redux-store/actions/postAction';
 
 const index = () => {
-	const [posts, setPosts] = useState([]);
+	// const [posts, setPosts] = useState([]);
 
 	const [session, loading] = useSession();
 
-	// const dispatch = useDispatch();
-	// const { posts1 } = useSelector((state) => state.post);
+	const dispatch = useDispatch();
+	const { posts } = useSelector((state) => state.post);
 
 	const [formValue, setFormValue] = useState({
 		title: '',
@@ -31,19 +31,19 @@ const index = () => {
 
 	const [currentId, setCurrentId] = useState(null);
 
+	// useEffect(() => {
+	// 	retrievePosts();
+	// }, [formValue]);
+
 	useEffect(() => {
-		retrievePosts();
+		dispatch(fetchPosts());
 	}, [formValue]);
 
-	// useEffect(() => {
-	// 	dispatch(fetchPosts());
-	// }, []);
-
-	const retrievePosts = async () => {
-		const response = await postServices.getAll();
-		await setPosts(response.data);
-		console.log(response.data);
-	};
+	// const retrievePosts = async () => {
+	// 	const response = await postServices.getAll();
+	// 	await setPosts(response.data);
+	// 	console.log(response.data);
+	// };
 
 	return (
 		<div className={styles.container}>

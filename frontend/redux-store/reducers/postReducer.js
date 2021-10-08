@@ -1,7 +1,7 @@
 import * as types from '../types';
 
 const initialState = {
-	posts1: [],
+	posts: [],
 	post: {},
 	loading: false,
 	error: null,
@@ -12,7 +12,7 @@ export const postReducer = (state = initialState, action) => {
 		case types.GET_POSTS:
 			return {
 				...state,
-				posts1: action.payload,
+				posts: action.payload,
 				loading: false,
 				error: null,
 			};
